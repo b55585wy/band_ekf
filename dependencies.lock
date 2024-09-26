@@ -1,0 +1,63 @@
+dependencies:
+  espressif/arduino-foc:
+    component_hash: 043f369595cdbb18e6f1745d279ae23d9ee87e211c4da4a9ffcd721176ac827b
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.4'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 2.3.0~3
+  espressif/esp_simplefoc:
+    component_hash: d66692eb939e225c14c0f97d8672ddef12fe3ca76524e73f3ed82b3d16c86a05
+    dependencies:
+    - name: espressif/arduino-foc
+      registry_url: https://components.espressif.com/
+      require: public
+      version: '>=2.3.0~3'
+    - name: espressif/iqmath
+      registry_url: https://components.espressif.com/
+      require: private
+      version: ^1.11.0
+    - name: idf
+      require: private
+      version: '>=5.0'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    targets:
+    - esp32
+    - esp32s2
+    - esp32s3
+    - esp32c3
+    - esp32c6
+    - esp32h2
+    version: 0.2.0
+  espressif/iqmath:
+    component_hash: 407d5bc3fd358a73d2b09982918ab508b4e804cc547942c5979d226be86b7e75
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.4'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.11.0
+  idf:
+    source:
+      type: idf
+    version: 5.3.1
+  protocol_examples_common:
+    dependencies: []
+    source:
+      path: /home/yiwang/esp/v5.3.1/esp-idf/examples/common_components/protocol_examples_common
+      type: local
+    version: '*'
+direct_dependencies:
+- espressif/esp_simplefoc
+- idf
+- protocol_examples_common
+manifest_hash: 90c603116840aa3d96023f9f45ea60e703eb2aa33fdaec897c346e83896aa1c3
+target: esp32s3
+version: 2.0.0
